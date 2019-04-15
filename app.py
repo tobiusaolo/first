@@ -40,6 +40,9 @@ def predict():
 	 	my_prediction=clf.predict(data1)
 
 	return render_template('result.html',prediction=my_prediction)
+@app.route('/about')
+def about():
+	render_template('about.html')
 
 if __name__ == '__main__':
 	app.run(debug=True)	

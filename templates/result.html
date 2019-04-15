@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Result</title>
+	<link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+	<link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse" style="background-color: white; color:gray; margin-top: 10px;">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">IRIS DATASET</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#">About</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container-full text-center">
+	<h2>Results:</h2>
+{% if prediction == 0%}
+<div class="col-lg">
+	<div class="row"><h2 style="color:green;">Setosa</h2></div>
+	
+	<div class="row"><img src="{{url_for('static',filename='images/setosa.jpeg')}}" alt="Flowers in Chania"></div>
+</div>
+{% elif prediction == 1%}
+
+<div class="col-lg">
+	<div class="row"><h2 style="color:purple;">Versicolor</h2></div>
+	
+	<div class="row"><img src="{{url_for('static',filename='images/versicolor.jpeg')}}" alt="Flowers in Chania"></div>
+</div>
+{% elif prediction == 2%}
+
+<div class="col-lg">
+	<div class="row"><h2 style="color:yellow;">Virginica</h2></div>
+	
+	<div class="row"><img src="{{url_for('static',filename='images/virginica.jpeg')}}" alt="Flowers in Chania"></div>
+</div>
+{% endif %}
+</div>
+
+</body>
+</html>
